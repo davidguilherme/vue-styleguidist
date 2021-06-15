@@ -3,8 +3,7 @@
 import minimist from 'minimist'
 import kleur from 'kleur'
 import createLogger from 'glogg'
-import StyleguidistError from 'react-styleguidist/lib/scripts/utils/error'
-import { version as vueVersion } from 'vue/package.json'
+import StyleguidistError from 'react-styleguidist/lib/scripts/utils/error';
 import { SanitizedStyleguidistConfig } from '../types/StyleGuide'
 import getConfig from '../scripts/config'
 import consts from '../scripts/consts'
@@ -35,12 +34,6 @@ process.on('uncaughtException', (err: any) => {
 	}
 	process.exit(1)
 })
-
-let correctVueVersion = false
-if (vueVersion) {
-	const [majorVue] = vueVersion.split('.')
-	correctVueVersion = parseInt(majorVue, 10) === 2
-}
 
 // Make sure user has webpack installed
 require('react-styleguidist/lib/scripts/utils/ensureWebpack')
